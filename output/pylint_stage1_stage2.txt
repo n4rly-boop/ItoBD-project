@@ -1,0 +1,13 @@
+************* Module build_projectdb
+scripts/build_projectdb.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+scripts/build_projectdb.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/build_projectdb.py:25:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/build_projectdb.py:29:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/build_projectdb.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+scripts/build_projectdb.py:85:11: W0703: Catching too general exception Exception (broad-except)
+scripts/build_projectdb.py:62:65: C0103: Variable name "f" doesn't conform to snake_case naming style (invalid-name)
+scripts/build_projectdb.py:85:4: C0103: Variable name "e" doesn't conform to snake_case naming style (invalid-name)
+
+-----------------------------------
+Your code has been rated at 8.82/10
+

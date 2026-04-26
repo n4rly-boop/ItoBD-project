@@ -1,0 +1,166 @@
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP DATABASE IF EXISTS team22_projectdb CASCADE;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE DATABASE team22_projectdb LOCATION 'project/hive/warehouse';
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team22_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS flights_2024_raw_ext;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE flights_2024_raw_ext
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> STORED AS AVRO
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> LOCATION 'project/warehouse/flights_2024_raw'
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> TBLPROPERTIES (
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>   'avro.schema.url'='project/warehouse/avsc/flights_2024_raw.avsc'
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> );
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SHOW DATABASES;
++------------------------+--+
+|     database_name      |
++------------------------+--+
+| default                |
+| retake1                |
+| root_db                |
+| show                   |
+| team00_projectdb       |
+| team0_projectdb        |
+| team0db                |
+| team0db1               |
+| team0db2               |
+| team11_projectdb       |
+| team12_db              |
+| team12_hive_projectdb  |
+| team12_projectdb       |
+| team13_projectdb       |
+| team13_projectdb_hive  |
+| team14_projectdb       |
+| team15_projectdb       |
+| team16_projectdb       |
+| team17_projectdb       |
+| team18_projectdb       |
+| team19_projectdb       |
+| team1_projectdb        |
+| team20_projectdb       |
+| team21_projectdb       |
+| team21_projectdb_v2    |
+| team21_projectdb_v3    |
+| team21_projectdb_v4    |
+| team22_projectdb       |
+| team23_projectdb       |
+| team24_projectdb       |
+| team25_projectdb       |
+| team26_projectdb       |
+| team27_projectdb       |
+| team28_hive_db         |
+| team28_projectdb       |
+| team29_projectdb       |
+| team2_projectdb        |
+| team30_projectdb       |
+| team31_projectdb       |
+| team33_projectdb       |
+| team34_projectdb       |
+| team36_projectdb       |
+| team36db               |
+| team37_projectdb       |
+| team38_projectdb       |
+| team39_projectdb       |
+| team3_projectdb        |
+| team48_projectdb       |
+| team49_projectdb       |
+| team4_projectdb        |
+| team50                 |
+| team5_projectdb        |
+| team6_projectdb        |
+| team7_projectdb        |
+| team8_projectdb        |
+| team9_projectdb        |
+| teamx_projectdb        |
+| temp_team5_projectdb   |
+| testdb                 |
++------------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team22_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SHOW TABLES;
++-----------------------+--+
+|       tab_name        |
++-----------------------+--+
+| flights_2024_raw_ext  |
++-----------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE FORMATTED flights_2024_raw_ext;
++-------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------+--+
+|           col_name            |                                       data_type                                        |                    comment                    |
++-------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------+--+
+| # col_name                    | data_type                                                                              | comment                                       |
+| flight_id                     | bigint                                                                                 |                                               |
+| year                          | int                                                                                    |                                               |
+| month                         | int                                                                                    |                                               |
+| day_of_month                  | int                                                                                    |                                               |
+| day_of_week                   | int                                                                                    |                                               |
+| fl_date                       | bigint                                                                                 |                                               |
+| op_unique_carrier             | string                                                                                 |                                               |
+| op_carrier_fl_num             | string                                                                                 |                                               |
+| origin                        | string                                                                                 |                                               |
+| origin_city_name              | string                                                                                 |                                               |
+| origin_state_nm               | string                                                                                 |                                               |
+| dest                          | string                                                                                 |                                               |
+| dest_city_name                | string                                                                                 |                                               |
+| dest_state_nm                 | string                                                                                 |                                               |
+| crs_dep_time                  | int                                                                                    |                                               |
+| dep_time                      | string                                                                                 |                                               |
+| dep_delay                     | string                                                                                 |                                               |
+| taxi_out                      | string                                                                                 |                                               |
+| wheels_off                    | string                                                                                 |                                               |
+| wheels_on                     | string                                                                                 |                                               |
+| taxi_in                       | string                                                                                 |                                               |
+| crs_arr_time                  | int                                                                                    |                                               |
+| arr_time                      | string                                                                                 |                                               |
+| arr_delay                     | string                                                                                 |                                               |
+| cancelled                     | int                                                                                    |                                               |
+| cancellation_code             | string                                                                                 |                                               |
+| diverted                      | int                                                                                    |                                               |
+| crs_elapsed_time              | string                                                                                 |                                               |
+| actual_elapsed_time           | string                                                                                 |                                               |
+| air_time                      | string                                                                                 |                                               |
+| distance                      | string                                                                                 |                                               |
+| carrier_delay                 | int                                                                                    |                                               |
+| weather_delay                 | int                                                                                    |                                               |
+| nas_delay                     | int                                                                                    |                                               |
+| security_delay                | int                                                                                    |                                               |
+| late_aircraft_delay           | int                                                                                    |                                               |
+|                               | NULL                                                                                   | NULL                                          |
+| # Detailed Table Information  | NULL                                                                                   | NULL                                          |
+| Database:                     | team22_projectdb                                                                       | NULL                                          |
+| OwnerType:                    | USER                                                                                   | NULL                                          |
+| Owner:                        | team22                                                                                 | NULL                                          |
+| CreateTime:                   | Fri Apr 24 22:40:20 MSK 2026                                                           | NULL                                          |
+| LastAccessTime:               | UNKNOWN                                                                                | NULL                                          |
+| Retention:                    | 0                                                                                      | NULL                                          |
+| Location:                     | hdfs://hadoop-02.uni.innopolis.ru:8020/user/team22/project/warehouse/flights_2024_raw  | NULL                                          |
+| Table Type:                   | EXTERNAL_TABLE                                                                         | NULL                                          |
+| Table Parameters:             | NULL                                                                                   | NULL                                          |
+|                               | EXTERNAL                                                                               | TRUE                                          |
+|                               | avro.schema.url                                                                        | project/warehouse/avsc/flights_2024_raw.avsc  |
+|                               | bucketing_version                                                                      | 2                                             |
+|                               | numFiles                                                                               | 1                                             |
+|                               | totalSize                                                                              | 538655898                                     |
+|                               | transient_lastDdlTime                                                                  | 1777059620                                    |
+|                               | NULL                                                                                   | NULL                                          |
+| # Storage Information         | NULL                                                                                   | NULL                                          |
+| SerDe Library:                | org.apache.hadoop.hive.serde2.avro.AvroSerDe                                           | NULL                                          |
+| InputFormat:                  | org.apache.hadoop.hive.ql.io.avro.AvroContainerInputFormat                             | NULL                                          |
+| OutputFormat:                 | org.apache.hadoop.hive.ql.io.avro.AvroContainerOutputFormat                            | NULL                                          |
+| Compressed:                   | No                                                                                     | NULL                                          |
+| Num Buckets:                  | -1                                                                                     | NULL                                          |
+| Bucket Columns:               | []                                                                                     | NULL                                          |
+| Sort Columns:                 | []                                                                                     | NULL                                          |
+| Storage Desc Params:          | NULL                                                                                   | NULL                                          |
+|                               | serialization.format                                                                   | 1                                             |
++-------------------------------+----------------------------------------------------------------------------------------+-----------------------------------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT * FROM flights_2024_raw_ext LIMIT 5;
++---------------------------------+----------------------------+-----------------------------+------------------------------------+-----------------------------------+-------------------------------+-----------------------------------------+-----------------------------------------+------------------------------+----------------------------------------+---------------------------------------+----------------------------+--------------------------------------+-------------------------------------+------------------------------------+--------------------------------+---------------------------------+--------------------------------+----------------------------------+---------------------------------+-------------------------------+------------------------------------+--------------------------------+---------------------------------+---------------------------------+-----------------------------------------+--------------------------------+----------------------------------------+-------------------------------------------+--------------------------------+--------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------------+-------------------------------------------+--+
+| flights_2024_raw_ext.flight_id  | flights_2024_raw_ext.year  | flights_2024_raw_ext.month  | flights_2024_raw_ext.day_of_month  | flights_2024_raw_ext.day_of_week  | flights_2024_raw_ext.fl_date  | flights_2024_raw_ext.op_unique_carrier  | flights_2024_raw_ext.op_carrier_fl_num  | flights_2024_raw_ext.origin  | flights_2024_raw_ext.origin_city_name  | flights_2024_raw_ext.origin_state_nm  | flights_2024_raw_ext.dest  | flights_2024_raw_ext.dest_city_name  | flights_2024_raw_ext.dest_state_nm  | flights_2024_raw_ext.crs_dep_time  | flights_2024_raw_ext.dep_time  | flights_2024_raw_ext.dep_delay  | flights_2024_raw_ext.taxi_out  | flights_2024_raw_ext.wheels_off  | flights_2024_raw_ext.wheels_on  | flights_2024_raw_ext.taxi_in  | flights_2024_raw_ext.crs_arr_time  | flights_2024_raw_ext.arr_time  | flights_2024_raw_ext.arr_delay  | flights_2024_raw_ext.cancelled  | flights_2024_raw_ext.cancellation_code  | flights_2024_raw_ext.diverted  | flights_2024_raw_ext.crs_elapsed_time  | flights_2024_raw_ext.actual_elapsed_time  | flights_2024_raw_ext.air_time  | flights_2024_raw_ext.distance  | flights_2024_raw_ext.carrier_delay  | flights_2024_raw_ext.weather_delay  | flights_2024_raw_ext.nas_delay  | flights_2024_raw_ext.security_delay  | flights_2024_raw_ext.late_aircraft_delay  |
++---------------------------------+----------------------------+-----------------------------+------------------------------------+-----------------------------------+-------------------------------+-----------------------------------------+-----------------------------------------+------------------------------+----------------------------------------+---------------------------------------+----------------------------+--------------------------------------+-------------------------------------+------------------------------------+--------------------------------+---------------------------------+--------------------------------+----------------------------------+---------------------------------+-------------------------------+------------------------------------+--------------------------------+---------------------------------+---------------------------------+-----------------------------------------+--------------------------------+----------------------------------------+-------------------------------------------+--------------------------------+--------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------------+-------------------------------------------+--+
+| 1                               | 2024                       | 1                           | 1                                  | 1                                 | 1704056400000                 | 9E                                      | 4814.0                                  | JFK                          | New York, NY                           | New York                              | DTW                        | Detroit, MI                          | Michigan                            | 1252                               | 1247.0                         | -5.00                           | 31.00                          | 1318.0                           | 1442.0                          | 7.00                          | 1508                               | 1449.0                         | -19.00                          | 0                               | NULL                                    | 0                              | 136.00                                 | 122.00                                    | 84.00                          | 509.00                         | 0                                   | 0                                   | 0                               | 0                                    | 0                                         |
+| 2                               | 2024                       | 1                           | 1                                  | 1                                 | 1704056400000                 | 9E                                      | 4815.0                                  | MSP                          | Minneapolis, MN                        | Minnesota                             | CLE                        | Cleveland, OH                        | Ohio                                | 1015                               | 1001.0                         | -14.00                          | 20.00                          | 1021.0                           | 1249.0                          | 6.00                          | 1325                               | 1255.0                         | -30.00                          | 0                               | NULL                                    | 0                              | 130.00                                 | 114.00                                    | 88.00                          | 622.00                         | 0                                   | 0                                   | 0                               | 0                                    | 0                                         |
+| 3                               | 2024                       | 1                           | 1                                  | 1                                 | 1704056400000                 | 9E                                      | 4817.0                                  | JFK                          | New York, NY                           | New York                              | RIC                        | Richmond, VA                         | Virginia                            | 1415                               | 1411.0                         | -4.00                           | 21.00                          | 1432.0                           | 1533.0                          | 8.00                          | 1601                               | 1541.0                         | -20.00                          | 0                               | NULL                                    | 0                              | 106.00                                 | 90.00                                     | 61.00                          | 288.00                         | 0                                   | 0                                   | 0                               | 0                                    | 0                                         |
+| 4                               | 2024                       | 1                           | 1                                  | 1                                 | 1704056400000                 | 9E                                      | 4817.0                                  | RIC                          | Richmond, VA                           | Virginia                              | JFK                        | New York, NY                         | New York                            | 1650                               | 1643.0                         | -7.00                           | 13.00                          | 1656.0                           | 1747.0                          | 12.00                         | 1841                               | 1759.0                         | -42.00                          | 0                               | NULL                                    | 0                              | 111.00                                 | 76.00                                     | 51.00                          | 288.00                         | 0                                   | 0                                   | 0                               | 0                                    | 0                                         |
+| 5                               | 2024                       | 1                           | 1                                  | 1                                 | 1704056400000                 | 9E                                      | 4818.0                                  | DTW                          | Detroit, MI                            | Michigan                              | MKE                        | Milwaukee, WI                        | Wisconsin                           | 1015                               | 1010.0                         | -5.00                           | 21.00                          | 1031.0                           | 1016.0                          | 4.00                          | 1034                               | 1020.0                         | -14.00                          | 0                               | NULL                                    | 0                              | 79.00                                  | 70.00                                     | 45.00                          | 237.00                         | 0                                   | 0                                   | 0                               | 0                                    | 0                                         |
++---------------------------------+----------------------------+-----------------------------+------------------------------------+-----------------------------------+-------------------------------+-----------------------------------------+-----------------------------------------+------------------------------+----------------------------------------+---------------------------------------+----------------------------+--------------------------------------+-------------------------------------+------------------------------------+--------------------------------+---------------------------------+--------------------------------+----------------------------------+---------------------------------+-------------------------------+------------------------------------+--------------------------------+---------------------------------+---------------------------------+-----------------------------------------+--------------------------------+----------------------------------------+-------------------------------------------+--------------------------------+--------------------------------+-------------------------------------+-------------------------------------+---------------------------------+--------------------------------------+-------------------------------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 

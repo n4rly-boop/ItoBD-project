@@ -1,0 +1,223 @@
+{
+  "type" : "record",
+  "name" : "flights_2024_raw",
+  "doc" : "Sqoop import of flights_2024_raw",
+  "fields" : [ {
+    "name" : "flight_id",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "flight_id",
+    "sqlType" : "-5"
+  }, {
+    "name" : "year",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "year",
+    "sqlType" : "4"
+  }, {
+    "name" : "month",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "month",
+    "sqlType" : "5"
+  }, {
+    "name" : "day_of_month",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "day_of_month",
+    "sqlType" : "5"
+  }, {
+    "name" : "day_of_week",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "day_of_week",
+    "sqlType" : "5"
+  }, {
+    "name" : "fl_date",
+    "type" : [ "null", "long" ],
+    "default" : null,
+    "columnName" : "fl_date",
+    "sqlType" : "91"
+  }, {
+    "name" : "op_unique_carrier",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "op_unique_carrier",
+    "sqlType" : "12"
+  }, {
+    "name" : "op_carrier_fl_num",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "op_carrier_fl_num",
+    "sqlType" : "2"
+  }, {
+    "name" : "origin",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "origin",
+    "sqlType" : "12"
+  }, {
+    "name" : "origin_city_name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "origin_city_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "origin_state_nm",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "origin_state_nm",
+    "sqlType" : "12"
+  }, {
+    "name" : "dest",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dest",
+    "sqlType" : "12"
+  }, {
+    "name" : "dest_city_name",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dest_city_name",
+    "sqlType" : "12"
+  }, {
+    "name" : "dest_state_nm",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dest_state_nm",
+    "sqlType" : "12"
+  }, {
+    "name" : "crs_dep_time",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "crs_dep_time",
+    "sqlType" : "4"
+  }, {
+    "name" : "dep_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dep_time",
+    "sqlType" : "2"
+  }, {
+    "name" : "dep_delay",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "dep_delay",
+    "sqlType" : "2"
+  }, {
+    "name" : "taxi_out",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "taxi_out",
+    "sqlType" : "2"
+  }, {
+    "name" : "wheels_off",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "wheels_off",
+    "sqlType" : "2"
+  }, {
+    "name" : "wheels_on",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "wheels_on",
+    "sqlType" : "2"
+  }, {
+    "name" : "taxi_in",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "taxi_in",
+    "sqlType" : "2"
+  }, {
+    "name" : "crs_arr_time",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "crs_arr_time",
+    "sqlType" : "4"
+  }, {
+    "name" : "arr_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "arr_time",
+    "sqlType" : "2"
+  }, {
+    "name" : "arr_delay",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "arr_delay",
+    "sqlType" : "2"
+  }, {
+    "name" : "cancelled",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "cancelled",
+    "sqlType" : "5"
+  }, {
+    "name" : "cancellation_code",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "cancellation_code",
+    "sqlType" : "12"
+  }, {
+    "name" : "diverted",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "diverted",
+    "sqlType" : "5"
+  }, {
+    "name" : "crs_elapsed_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "crs_elapsed_time",
+    "sqlType" : "2"
+  }, {
+    "name" : "actual_elapsed_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "actual_elapsed_time",
+    "sqlType" : "2"
+  }, {
+    "name" : "air_time",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "air_time",
+    "sqlType" : "2"
+  }, {
+    "name" : "distance",
+    "type" : [ "null", "string" ],
+    "default" : null,
+    "columnName" : "distance",
+    "sqlType" : "2"
+  }, {
+    "name" : "carrier_delay",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "carrier_delay",
+    "sqlType" : "4"
+  }, {
+    "name" : "weather_delay",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "weather_delay",
+    "sqlType" : "4"
+  }, {
+    "name" : "nas_delay",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "nas_delay",
+    "sqlType" : "4"
+  }, {
+    "name" : "security_delay",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "security_delay",
+    "sqlType" : "4"
+  }, {
+    "name" : "late_aircraft_delay",
+    "type" : [ "null", "int" ],
+    "default" : null,
+    "columnName" : "late_aircraft_delay",
+    "sqlType" : "4"
+  } ],
+  "tableName" : "flights_2024_raw"
+}

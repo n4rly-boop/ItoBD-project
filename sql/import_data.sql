@@ -1,0 +1,42 @@
+COPY flights_2024_raw (
+    year,
+    month,
+    day_of_month,
+    day_of_week,
+    fl_date,
+    op_unique_carrier,
+    op_carrier_fl_num,
+    origin,
+    origin_city_name,
+    origin_state_nm,
+    dest,
+    dest_city_name,
+    dest_state_nm,
+    crs_dep_time,
+    dep_time,
+    dep_delay,
+    taxi_out,
+    wheels_off,
+    wheels_on,
+    taxi_in,
+    crs_arr_time,
+    arr_time,
+    arr_delay,
+    cancelled,
+    cancellation_code,
+    diverted,
+    crs_elapsed_time,
+    actual_elapsed_time,
+    air_time,
+    distance,
+    carrier_delay,
+    weather_delay,
+    nas_delay,
+    security_delay,
+    late_aircraft_delay
+)
+FROM STDIN
+WITH (
+    FORMAT CSV,
+    HEADER TRUE
+);

@@ -1,0 +1,104 @@
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> USE team22_projectdb;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS flights_2024_raw_ext;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SHOW TABLES;
++-------------------------+--+
+|        tab_name         |
++-------------------------+--+
+| flights_2024_part_buck  |
++-------------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DESCRIBE FORMATTED flights_2024_part_buck;
++-------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------+--+
+|           col_name            |                                             data_type                                             |           comment           |
++-------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------+--+
+| # col_name                    | data_type                                                                                         | comment                     |
+| flight_id                     | bigint                                                                                            |                             |
+| year                          | int                                                                                               |                             |
+| day_of_month                  | int                                                                                               |                             |
+| day_of_week                   | int                                                                                               |                             |
+| fl_date                       | date                                                                                              |                             |
+| op_unique_carrier             | string                                                                                            |                             |
+| op_carrier_fl_num             | double                                                                                            |                             |
+| origin                        | string                                                                                            |                             |
+| origin_city_name              | string                                                                                            |                             |
+| origin_state_nm               | string                                                                                            |                             |
+| dest                          | string                                                                                            |                             |
+| dest_city_name                | string                                                                                            |                             |
+| dest_state_nm                 | string                                                                                            |                             |
+| crs_dep_time                  | int                                                                                               |                             |
+| dep_time                      | double                                                                                            |                             |
+| dep_delay                     | double                                                                                            |                             |
+| taxi_out                      | double                                                                                            |                             |
+| wheels_off                    | double                                                                                            |                             |
+| wheels_on                     | double                                                                                            |                             |
+| taxi_in                       | double                                                                                            |                             |
+| crs_arr_time                  | int                                                                                               |                             |
+| arr_time                      | double                                                                                            |                             |
+| arr_delay                     | double                                                                                            |                             |
+| cancelled                     | int                                                                                               |                             |
+| cancellation_code             | string                                                                                            |                             |
+| diverted                      | int                                                                                               |                             |
+| crs_elapsed_time              | double                                                                                            |                             |
+| actual_elapsed_time           | double                                                                                            |                             |
+| air_time                      | double                                                                                            |                             |
+| distance                      | double                                                                                            |                             |
+| carrier_delay                 | int                                                                                               |                             |
+| weather_delay                 | int                                                                                               |                             |
+| nas_delay                     | int                                                                                               |                             |
+| security_delay                | int                                                                                               |                             |
+| late_aircraft_delay           | int                                                                                               |                             |
+|                               | NULL                                                                                              | NULL                        |
+| # Partition Information       | NULL                                                                                              | NULL                        |
+| # col_name                    | data_type                                                                                         | comment                     |
+| month                         | int                                                                                               |                             |
+|                               | NULL                                                                                              | NULL                        |
+| # Detailed Table Information  | NULL                                                                                              | NULL                        |
+| Database:                     | team22_projectdb                                                                                  | NULL                        |
+| OwnerType:                    | USER                                                                                              | NULL                        |
+| Owner:                        | team22                                                                                            | NULL                        |
+| CreateTime:                   | Fri Apr 24 22:40:22 MSK 2026                                                                      | NULL                        |
+| LastAccessTime:               | UNKNOWN                                                                                           | NULL                        |
+| Retention:                    | 0                                                                                                 | NULL                        |
+| Location:                     | hdfs://hadoop-02.uni.innopolis.ru:8020/user/team22/project/hive/warehouse/flights_2024_part_buck  | NULL                        |
+| Table Type:                   | EXTERNAL_TABLE                                                                                    | NULL                        |
+| Table Parameters:             | NULL                                                                                              | NULL                        |
+|                               | COLUMN_STATS_ACCURATE                                                                             | {\"BASIC_STATS\":\"true\"}  |
+|                               | EXTERNAL                                                                                          | TRUE                        |
+|                               | bucketing_version                                                                                 | 2                           |
+|                               | numFiles                                                                                          | 132                         |
+|                               | numPartitions                                                                                     | 12                          |
+|                               | numRows                                                                                           | 7079081                     |
+|                               | rawDataSize                                                                                       | 247767835                   |
+|                               | totalSize                                                                                         | 250415668                   |
+|                               | transient_lastDdlTime                                                                             | 1777059622                  |
+|                               | NULL                                                                                              | NULL                        |
+| # Storage Information         | NULL                                                                                              | NULL                        |
+| SerDe Library:                | org.apache.hadoop.hive.ql.io.parquet.serde.ParquetHiveSerDe                                       | NULL                        |
+| InputFormat:                  | org.apache.hadoop.hive.ql.io.parquet.MapredParquetInputFormat                                     | NULL                        |
+| OutputFormat:                 | org.apache.hadoop.hive.ql.io.parquet.MapredParquetOutputFormat                                    | NULL                        |
+| Compressed:                   | No                                                                                                | NULL                        |
+| Num Buckets:                  | 16                                                                                                | NULL                        |
+| Bucket Columns:               | [op_unique_carrier]                                                                               | NULL                        |
+| Sort Columns:                 | []                                                                                                | NULL                        |
+| Storage Desc Params:          | NULL                                                                                              | NULL                        |
+|                               | serialization.format                                                                              | 1                           |
++-------------------------------+---------------------------------------------------------------------------------------------------+-----------------------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT COUNT(*) AS total_rows
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> FROM flights_2024_part_buck;
++-------------+--+
+| total_rows  |
++-------------+--+
+| 7079081     |
++-------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT MIN(fl_date) AS min_date, MAX(fl_date) AS max_date
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> FROM flights_2024_part_buck;
++-------------+-------------+--+
+|  min_date   |  max_date   |
++-------------+-------------+--+
+| 2024-01-01  | 2024-12-31  |
++-------------+-------------+--+
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
