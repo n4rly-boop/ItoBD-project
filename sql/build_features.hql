@@ -1,0 +1,71 @@
+USE team22_projectdb;
+
+SET hive.exec.dynamic.partition=true;
+SET hive.exec.dynamic.partition.mode=nonstrict;
+
+DROP TABLE IF EXISTS flights_2024_features;
+
+CREATE EXTERNAL TABLE flights_2024_features (
+    flight_id BIGINT,
+    year INT,
+    day_of_month INT,
+    day_of_week INT,
+    fl_date DATE,
+    op_unique_carrier STRING,
+    op_carrier_fl_num DOUBLE,
+    origin STRING,
+    origin_city_name STRING,
+    origin_state_nm STRING,
+    dest STRING,
+    dest_city_name STRING,
+    dest_state_nm STRING,
+    crs_dep_time INT,
+    dep_time DOUBLE,
+    dep_delay DOUBLE,
+    taxi_out DOUBLE,
+    wheels_off DOUBLE,
+    wheels_on DOUBLE,
+    taxi_in DOUBLE,
+    crs_arr_time INT,
+    arr_time DOUBLE,
+    arr_delay DOUBLE,
+    cancelled INT,
+    cancellation_code STRING,
+    diverted INT,
+    crs_elapsed_time DOUBLE,
+    actual_elapsed_time DOUBLE,
+    air_time DOUBLE,
+    distance DOUBLE,
+    carrier_delay INT,
+    weather_delay INT,
+    nas_delay INT,
+    security_delay INT,
+    late_aircraft_delay INT,
+    scheduled_dep_hour INT,
+    scheduled_arr_hour INT,
+    is_weekend INT,
+    is_arrival_delayed INT
+)
+PARTITIONED BY (month INT)
+CLUSTERED BY (op_unique_carrier) INTO 16 BUCKETS
+STORED AS PARQUET
+LOCATION 'project/hive/warehouse/flights_2024_features'
+TBLPROPERTIES ('parquet.compression'='SNAPPY');
+
+INSERT INTO flights_2024_features PARTITION (month)
+SELECT
+    flight_id, year, day_of_month, day_of_week, fl_date,
+    op_unique_carrier, op_carrier_fl_num, origin, origin_city_name, origin_state_nm,
+    dest, dest_city_name, dest_state_nm, crs_dep_time, dep_time, dep_delay,
+    taxi_out, wheels_off, wheels_on, taxi_in, crs_arr_time, arr_time, arr_delay,
+    cancelled, cancellation_code, diverted, crs_elapsed_time, actual_elapsed_time,
+    air_time, distance, carrier_delay, weather_delay, nas_delay, security_delay,
+    late_aircraft_delay,
+    FLOOR(crs_dep_time / 100),
+    FLOOR(crs_arr_time / 100),
+    CASE WHEN day_of_week IN (6,7) THEN 1 ELSE 0 END,
+    CASE WHEN arr_delay > 15 THEN 1 ELSE 0 END,
+    month
+FROM flights_2024_part_buck;
+
+DROP TABLE IF EXISTS flights_2024_part_buck;
