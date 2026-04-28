@@ -1,0 +1,3 @@
+q8_results.is_weekend,q8_results.avg_arr_delay,q8_results.avg_dep_delay,q8_results.total_flights
+0,6.8706644894575675,12.257425200123391,5037642
+1,7.693003566565074,13.456236041761235,1927625
