@@ -136,6 +136,10 @@ ENV/
 env.bak/
 venv.bak/
 
+# Project secrets and large data
+secrets/
+data/flight_data_2024.csv
+
 # Spyder project settings
 .spyderproject
 .spyproject
