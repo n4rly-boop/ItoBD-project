@@ -1,0 +1,24 @@
+************* Module model
+scripts/model.py:824:0: C0304: Final newline missing (missing-final-newline)
+scripts/model.py:67:18: W0212: Access to a protected member _jsc of a client class (protected-access)
+scripts/model.py:68:17: W0212: Access to a protected member _jvm of a client class (protected-access)
+scripts/model.py:69:16: W0212: Access to a protected member _jvm of a client class (protected-access)
+scripts/model.py:85:26: C0103: Argument name "df" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:123:24: C0103: Argument name "df" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:190:4: C0103: Variable name "df" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:199:4: C0103: Variable name "df" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:377:0: R0914: Too many local variables (16/15) (too-many-locals)
+scripts/model.py:386:4: C0103: Variable name "cm" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:391:4: C0103: Variable name "tn" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:392:4: C0103: Variable name "fp" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:393:4: C0103: Variable name "fn" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:394:4: C0103: Variable name "tp" doesn't conform to snake_case naming style (invalid-name)
+scripts/model.py:449:0: R0913: Too many arguments (8/5) (too-many-arguments)
+scripts/model.py:449:0: R0914: Too many local variables (44/15) (too-many-locals)
+scripts/model.py:449:0: R0915: Too many statements (71/50) (too-many-statements)
+scripts/model.py:663:0: R0914: Too many local variables (21/15) (too-many-locals)
+scripts/model.py:681:4: C0103: Variable name "df" doesn't conform to snake_case naming style (invalid-name)
+
+------------------------------------------------------------------
+Your code has been rated at 9.24/10 (previous run: 9.24/10, +0.00)
+
