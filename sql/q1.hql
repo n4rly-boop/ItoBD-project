@@ -12,7 +12,7 @@ LOCATION 'project/hive/warehouse/q1';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q1_results
+INSERT OVERWRITE TABLE q1_results
 SELECT op_unique_carrier AS carrier, COUNT(*) AS flight_count
 FROM flights_2024_features
 GROUP BY op_unique_carrier

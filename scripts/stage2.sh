@@ -37,7 +37,7 @@ beeline \
   -n team22 \
   -p "$HIVE_PASSWORD" \
   -f sql/db.hql \
-  > output/stage2_db.txt 2> /dev/null
+  > output/stage2_db.txt
 
 echo "[4/6] Building optimized partitioned/bucketed table..."
 beeline \
@@ -45,7 +45,7 @@ beeline \
   -n team22 \
   -p "$HIVE_PASSWORD" \
   -f sql/optimize_flights.hql \
-  > output/stage2_optimize.txt 2> /dev/null
+  > output/stage2_optimize.txt
 
 echo "[5/6] Removing raw table and finalizing..."
 beeline \
@@ -53,7 +53,7 @@ beeline \
   -n team22 \
   -p "$HIVE_PASSWORD" \
   -f sql/finalize_stage2.hql \
-  > output/stage2_finalize.txt 2> /dev/null
+  > output/stage2_finalize.txt
 
 echo "[6/6] Building feature-engineered table flights_2024_features..."
 beeline \
@@ -61,7 +61,7 @@ beeline \
   -n team22 \
   -p "$HIVE_PASSWORD" \
   -f sql/build_features.hql \
-  > output/stage2_features.txt 2> /dev/null
+  > output/stage2_features.txt
 
 echo "Stage II infrastructure completed (features table ready)."
 
@@ -73,7 +73,7 @@ for i in $(seq 1 10); do
     -u jdbc:hive2://hadoop-03.uni.innopolis.ru:10001 \
     -n team22 \
     -p "$HIVE_PASSWORD" \
-    -f sql/q$i.hql > /dev/null 2>&1
+    -f sql/q$i.hql > /dev/null
   echo "Exporting q$i.csv..."
   beeline \
     -u jdbc:hive2://hadoop-03.uni.innopolis.ru:10001 \

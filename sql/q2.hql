@@ -12,7 +12,7 @@ LOCATION 'project/hive/warehouse/q2';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q2_results
+INSERT OVERWRITE TABLE q2_results
 SELECT origin, AVG(dep_delay) AS avg_dep_delay
 FROM flights_2024_features
 WHERE dep_delay IS NOT NULL

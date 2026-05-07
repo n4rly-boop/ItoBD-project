@@ -13,7 +13,7 @@ LOCATION 'project/hive/warehouse/q4';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q4_results
+INSERT OVERWRITE TABLE q4_results
 SELECT
     cancellation_code,
     COUNT(*) AS cancel_count,

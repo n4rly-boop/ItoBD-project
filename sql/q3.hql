@@ -12,7 +12,7 @@ LOCATION 'project/hive/warehouse/q3';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q3_results
+INSERT OVERWRITE TABLE q3_results
 SELECT month, COUNT(*) AS flight_count
 FROM flights_2024_features
 GROUP BY month

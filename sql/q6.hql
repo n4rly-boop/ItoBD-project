@@ -13,7 +13,7 @@ LOCATION 'project/hive/warehouse/q6';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q6_results
+INSERT OVERWRITE TABLE q6_results
 SELECT
     CONCAT(origin, ' → ', dest) AS route,
     COUNT(*) AS flight_count,

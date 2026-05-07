@@ -14,7 +14,7 @@ LOCATION 'project/hive/warehouse/q5';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q5_results
+INSERT OVERWRITE TABLE q5_results
 SELECT
     day_of_week,
     AVG(arr_delay) AS avg_arr_delay,

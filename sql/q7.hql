@@ -13,7 +13,7 @@ LOCATION 'project/hive/warehouse/q7';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q7_results
+INSERT OVERWRITE TABLE q7_results
 SELECT
     scheduled_dep_hour,
     AVG(dep_delay) AS avg_dep_delay,

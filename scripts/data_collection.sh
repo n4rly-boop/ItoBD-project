@@ -16,19 +16,37 @@ if ! command -v kaggle >/dev/null 2>&1; then
 fi
 
 mkdir -p data
-TMP_DIR="data/_tmp_kaggle_download"
 
-rm -rf "$TMP_DIR"
-mkdir -p "$TMP_DIR"
+REQUIRED=(
+  data/flight_data_2024.csv
+  data/flight_data_2024_data_dictionary.csv
+  data/flight_data_2024_sample.csv
+)
 
-kaggle datasets download -d hrishitpatil/flight-data-2024 -p "$TMP_DIR" --force
-unzip -o "$TMP_DIR/flight-data-2024.zip" -d "$TMP_DIR"
+ALL_PRESENT=true
+for f in "${REQUIRED[@]}"; do
+  if [ ! -s "$f" ]; then
+    ALL_PRESENT=false
+    break
+  fi
+done
 
-cp -f "$TMP_DIR/flight_data_2024.csv" data/
-cp -f "$TMP_DIR/flight_data_2024_data_dictionary.csv" data/
-cp -f "$TMP_DIR/flight_data_2024_sample.csv" data/
+if [ "$ALL_PRESENT" = true ]; then
+  echo "Dataset already present. Skipping Kaggle download."
+else
+  TMP_DIR="data/_tmp_kaggle_download"
+  rm -rf "$TMP_DIR"
+  mkdir -p "$TMP_DIR"
 
-rm -rf "$TMP_DIR"
+  kaggle datasets download -d hrishitpatil/flight-data-2024 -p "$TMP_DIR" --force
+  unzip -o "$TMP_DIR/flight-data-2024.zip" -d "$TMP_DIR"
+
+  cp -f "$TMP_DIR/flight_data_2024.csv" data/
+  cp -f "$TMP_DIR/flight_data_2024_data_dictionary.csv" data/
+  cp -f "$TMP_DIR/flight_data_2024_sample.csv" data/
+
+  rm -rf "$TMP_DIR"
+fi
 
 ls -lh \
   data/flight_data_2024.csv \

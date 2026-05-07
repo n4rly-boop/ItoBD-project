@@ -13,7 +13,7 @@ LOCATION 'project/hive/warehouse/q10';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q10_results
+INSERT OVERWRITE TABLE q10_results
 SELECT
     origin_state_nm AS state,
     AVG(dep_delay) AS avg_dep_delay,

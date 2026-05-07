@@ -14,7 +14,7 @@ LOCATION 'project/hive/warehouse/q8';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q8_results
+INSERT OVERWRITE TABLE q8_results
 SELECT
     is_weekend,
     AVG(arr_delay) AS avg_arr_delay,

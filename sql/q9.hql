@@ -13,7 +13,7 @@ LOCATION 'project/hive/warehouse/q9';
 
 SET hive.resultset.use.unique.column.names = false;
 
-INSERT INTO q9_results
+INSERT OVERWRITE TABLE q9_results
 SELECT
     CASE
         WHEN distance < 500 THEN '0-499 mi'
