@@ -9,8 +9,8 @@ Predict whether a US domestic flight will arrive delayed by more than 15 minutes
 1. `scripts/preprocess.sh`: environment setup
 2. `scripts/stage1.sh`: Kaggle CSV → PostgreSQL → Sqoop AVRO+Snappy on HDFS
 3. `scripts/stage2.sh`: Hive raw external table → Parquet+Snappy partitioned/bucketed → 10 EDA queries with CSV+chart export
-4. `scripts/stage3.sh`: Spark ML pipeline on YARN. Logistic Regression and Random Forest, 27-combo grid each, 3-fold CV
-5. `scripts/stage4.sh`: Streamlit dashboard
+4. `scripts/stage3.sh`: Spark ML pipeline on YARN. Logistic Regression and Random Forest, 6-combo grid each, 3-fold CV
+5. `scripts/stage4.sh`: Hive external tables over Stage III output for Apache Superset
 6. `scripts/postprocess.sh`: final checks
 7. `pylint scripts`: code quality report
 

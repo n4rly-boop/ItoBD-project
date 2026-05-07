@@ -708,8 +708,8 @@ def main():
 
     results = []
 
-    # ── Model 1: Logistic Regression ──────────────────────────────────────────
-    # Hyperparameters: regParam × elasticNetParam × tol = 3 × 3 × 3 = 27 combinations.
+    # Model 1: Logistic Regression
+    # Hyperparameters: regParam x elasticNetParam = 3 x 2 = 6 combinations.
     logistic_regression = LogisticRegression(
         labelCol=LABEL_COL,
         featuresCol="features",
@@ -736,8 +736,8 @@ def main():
 
     results.append(lr_result)
 
-    # ── Model 2: Random Forest ────────────────────────────────────────────────
-    # Hyperparameters: numTrees × maxDepth × minInstancesPerNode = 3 × 3 × 3 = 27 combinations.
+    # Model 2: Random Forest
+    # Hyperparameters: numTrees x maxDepth = 3 x 2 = 6 combinations.
     random_forest = RandomForestClassifier(
         labelCol=LABEL_COL,
         featuresCol="features",
@@ -745,7 +745,6 @@ def main():
         seed=RANDOM_SEED,
     )
 
-   # Hyperparameters: numTrees × maxDepth = 3 × 2 = 6 combinations.
     random_forest_grid = (
         ParamGridBuilder()
         .addGrid(random_forest.numTrees, [20, 50, 100])
@@ -809,7 +808,7 @@ def main():
 
     evaluation_df.show(truncate=False)
 
-    # ── Sample prediction with the best model by ROC-AUC ─────────────────────
+    # Sample prediction with the best model by ROC-AUC
     best = max(results, key=lambda r: r["areaUnderROC"])
     log(f"=== Best model: {best['model']} (AUC-ROC={best['areaUnderROC']:.4f}) ===")
 
