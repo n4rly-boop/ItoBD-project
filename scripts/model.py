@@ -1,14 +1,10 @@
-"""Stage III: Predictive Data Analytics with Spark ML.
+"""Stage III predictive analytics with Spark ML.
 
-Two binary classification models (Logistic Regression, Random Forest)
-with cross-validated hyperparameter grid search, cyclical sin/cos feature
-encoding, train-based class-weight balancing, extended classification metrics,
-and sample prediction output.
-
-This version follows:
-- Note1: cyclic temporal variables are encoded with sin/cos and are not passed
-  directly as ordinary numerical features.
-- Note2: features are scaled with StandardScaler.
+Trains Logistic Regression and Random Forest classifiers on the
+flights_2024_features Hive table with 3-fold cross-validation.
+Cyclic temporal variables are sin/cos encoded; features are scaled
+with StandardScaler. Saves trained pipelines, predictions, evaluation
+metrics, and a sample prediction to HDFS.
 """
 
 import math
@@ -83,7 +79,7 @@ def build_spark_session():
 
 
 def add_cyclical_features(df):
-    """Encode cyclical temporal features with sin/cos to preserve periodicity."""
+    """Add sin/cos columns for hour, day-of-week, month, day-of-month."""
     return (
         df
         .withColumn("dep_hour_sin", sin(col("scheduled_dep_hour") * (TWO_PI / 24)))
