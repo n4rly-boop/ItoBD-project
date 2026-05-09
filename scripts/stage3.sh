@@ -87,4 +87,11 @@ hdfs dfs -get project/models/model2 models/model2
 echo "[Stage III] Evaluation results:"
 cat output/evaluation.csv
 
+echo "[Stage III] Generating charts from evaluation.csv..."
+if [ -f "venv/bin/activate" ]; then
+  # shellcheck disable=SC1091
+  source venv/bin/activate
+fi
+python scripts/charts_stage3.py > output/stage3_charts.txt 2>&1
+
 echo "[Stage III] Completed successfully."
