@@ -1,0 +1,9 @@
+feature_group,feature_count,description
+categorical_features,3,"op_unique_carrier; origin; dest encoded with StringIndexer and OneHotEncoder"
+direct_numerical_features,3,"crs_elapsed_time; distance; is_weekend"
+cyclical_encoded_features,10,"scheduled departure hour; scheduled arrival hour; day of week; month; day of month encoded with sin/cos"
+models,2,"Logistic Regression and Random Forest"
+hyperparameter_combinations_per_model,6,"6 grid-search combinations per model"
+cross_validation_folds,3,"3-fold cross-validation"
+class_balancing,1,"class_weight computed from train set and passed through weightCol"
+scaling,1,"StandardScaler applied to assembled feature vectors"
