@@ -20,7 +20,7 @@ BEELINE_CMD=(
   -p "$HIVE_PASSWORD"
 )
 
-echo "[Stage III Hive] Checking required HDFS outputs..."
+echo "[Stage IV Hive] Checking required HDFS outputs..."
 
 if ! hdfs dfs -test -d project/output/evaluation; then
   echo "ERROR: HDFS directory project/output/evaluation not found. Run stage3.sh first." >&2
@@ -38,12 +38,12 @@ if ! hdfs dfs -test -d project/output/model2_predictions; then
 fi
 
 if hdfs dfs -test -d project/output/sample_prediction; then
-  echo "[Stage III Hive] sample_prediction exists."
+  echo "[Stage IV Hive] sample_prediction exists."
 else
-  echo "[Stage III Hive] WARNING: sample_prediction does not exist. Continuing."
+  echo "[Stage IV Hive] WARNING: sample_prediction does not exist. Continuing."
 fi
 
-echo "[Stage III Hive] Creating feature summary CSV..."
+echo "[Stage IV Hive] Creating feature summary CSV..."
 
 cat > output/stage3_feature_summary.csv <<'EOF'
 feature_group,feature_count,description
@@ -57,7 +57,7 @@ class_balancing,1,"class_weight computed from train set and passed through weigh
 scaling,1,"StandardScaler applied to assembled feature vectors"
 EOF
 
-echo "[Stage III Hive] Creating hyperparameter summary CSV..."
+echo "[Stage IV Hive] Creating hyperparameter summary CSV..."
 
 cat > output/stage3_hyperparameter_summary.csv <<'EOF'
 model,hyperparameter_1,values_1,hyperparameter_2,values_2,paramCombinations,cvFolds,cvFits,optimization_metric
@@ -65,7 +65,7 @@ model1_logistic_regression,regParam,"0.001;0.01;0.1",elasticNetParam,"0.0;0.5",6
 model2_random_forest,numTrees,"20;50;100",maxDepth,"5;10",6,3,18,areaUnderROC
 EOF
 
-echo "[Stage III Hive] Uploading summary CSV files to HDFS..."
+echo "[Stage IV Hive] Uploading summary CSV files to HDFS..."
 
 hdfs dfs -rm -r -f project/output/stage3_feature_summary || true
 hdfs dfs -rm -r -f project/output/stage3_hyperparameter_summary || true
@@ -76,13 +76,13 @@ hdfs dfs -mkdir -p project/output/stage3_hyperparameter_summary
 hdfs dfs -put -f output/stage3_feature_summary.csv project/output/stage3_feature_summary/data.csv
 hdfs dfs -put -f output/stage3_hyperparameter_summary.csv project/output/stage3_hyperparameter_summary/data.csv
 
-echo "[Stage III Hive] Creating external Hive tables and views with existing names..."
+echo "[Stage IV Hive] Creating external Hive tables and views with existing names..."
 
 "${BEELINE_CMD[@]}" \
   -f sql/create_stage3_hive_tables.hql \
   > output/create_stage3_hive_tables.txt 2>&1
 
-echo "[Stage III Hive] Checking created tables..."
+echo "[Stage IV Hive] Checking created tables..."
 
 "${BEELINE_CMD[@]}" \
   -e "
@@ -102,41 +102,10 @@ echo "[Stage III Hive] Checking created tables..."
   " \
   > output/check_stage3_hive_tables.txt 2>&1
 
-echo "[Stage III Hive] Creating Superset chart source check CSV..."
-
-"${BEELINE_CMD[@]}" \
-  --outputformat=csv2 \
-  -e "
-  USE team22_projectdb;
-
-  SELECT 'stage3_evaluation' AS source, COUNT(*) AS rows_count FROM stage3_evaluation
-  UNION ALL
-  SELECT 'stage3_feature_summary' AS source, COUNT(*) AS rows_count FROM stage3_feature_summary
-  UNION ALL
-  SELECT 'stage3_hyperparameter_summary' AS source, COUNT(*) AS rows_count FROM stage3_hyperparameter_summary
-  UNION ALL
-  SELECT 'stage3_hyperparameter_optimization' AS source, COUNT(*) AS rows_count FROM stage3_hyperparameter_optimization
-  UNION ALL
-  SELECT 'stage3_model_metrics_long' AS source, COUNT(*) AS rows_count FROM stage3_model_metrics_long
-  UNION ALL
-  SELECT 'stage3_model_comparison' AS source, COUNT(*) AS rows_count FROM stage3_model_comparison
-  UNION ALL
-  SELECT 'stage3_prediction_counts' AS source, COUNT(*) AS rows_count FROM stage3_prediction_counts
-  UNION ALL
-  SELECT 'stage3_confusion_matrix_long' AS source, COUNT(*) AS rows_count FROM stage3_confusion_matrix_long
-  UNION ALL
-  SELECT 'stage3_sample_prediction' AS source, COUNT(*) AS rows_count FROM stage3_sample_prediction;
-  " \
-  > output/stage3_chart_sources_check.csv
-
-echo "[Stage III Hive] Done."
+echo "[Stage IV Hive] Done."
 echo
 echo "Generated files:"
 echo "  output/stage3_feature_summary.csv"
 echo "  output/stage3_hyperparameter_summary.csv"
 echo "  output/create_stage3_hive_tables.txt"
 echo "  output/check_stage3_hive_tables.txt"
-echo "  output/stage3_chart_sources_check.csv"
-echo
-echo "[Stage III Hive] Superset chart source check:"
-cat output/stage3_chart_sources_check.csv
