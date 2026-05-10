@@ -1,29 +1,29 @@
 Connecting to jdbc:hive2://hadoop-03.uni.innopolis.ru:10001
-2026-05-09 19:29:19,330 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
-2026-05-09 19:29:19,331 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
+2026-05-10 18:49:12,552 INFO jdbc.Utils: Supplied authorities: hadoop-03.uni.innopolis.ru:10001
+2026-05-10 18:49:12,553 INFO jdbc.Utils: Resolved authority: hadoop-03.uni.innopolis.ru:10001
 Connected to: Apache Hive (version 3.1.3)
 Driver: Hive JDBC (version 2.3.9)
 Transaction isolation: TRANSACTION_REPEATABLE_READ
-INFO  : Compiling command(queryId=hive_20260509192919_7e595a70-bba9-4522-b2ac-9946be599c8f): USE team22_projectdb
+INFO  : Compiling command(queryId=hive_20260510184912_891d1836-9ef3-4160-973a-0ad43f1e525c): USE team22_projectdb
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192919_7e595a70-bba9-4522-b2ac-9946be599c8f : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184912_891d1836-9ef3-4160-973a-0ad43f1e525c : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
 
 STAGE PLANS:
   Stage: Stage-0
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192919_7e595a70-bba9-4522-b2ac-9946be599c8f); Time taken: 0.046 seconds
-INFO  : Executing command(queryId=hive_20260509192919_7e595a70-bba9-4522-b2ac-9946be599c8f): USE team22_projectdb
+INFO  : Completed compiling command(queryId=hive_20260510184912_891d1836-9ef3-4160-973a-0ad43f1e525c); Time taken: 0.056 seconds
+INFO  : Executing command(queryId=hive_20260510184912_891d1836-9ef3-4160-973a-0ad43f1e525c): USE team22_projectdb
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20260509192919_7e595a70-bba9-4522-b2ac-9946be599c8f); Time taken: 0.008 seconds
+INFO  : Completed executing command(queryId=hive_20260510184912_891d1836-9ef3-4160-973a-0ad43f1e525c); Time taken: 0.015 seconds
 INFO  : OK
-No rows affected (0.116 seconds)
-INFO  : Compiling command(queryId=hive_20260509192919_20c1c0b1-2153-4986-a34f-cac20f025438): SHOW TABLES LIKE 'stage3*'
+No rows affected (0.127 seconds)
+INFO  : Compiling command(queryId=hive_20260510184912_e6d07e36-6fc0-45ea-b7d9-01c565b83ba6): SHOW TABLES LIKE 'stage3*'
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192919_20c1c0b1-2153-4986-a34f-cac20f025438 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184912_e6d07e36-6fc0-45ea-b7d9-01c565b83ba6 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [DDL]
   Stage-1 depends on stages: Stage-0 [FETCH]
 
@@ -33,7 +33,7 @@ STAGE PLANS:
         Show Tables
           database name: team22_projectdb
           pattern: stage3*
-          result file: file:/tmp/hive/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-19_672_190897769369689342-1001/-local-10000
+          result file: file:/tmp/hive/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-12_904_3055955873312804162-2273/-local-10000
 
   Stage: Stage-1
     Fetch Operator
@@ -42,10 +42,10 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192919_20c1c0b1-2153-4986-a34f-cac20f025438); Time taken: 0.017 seconds
-INFO  : Executing command(queryId=hive_20260509192919_20c1c0b1-2153-4986-a34f-cac20f025438): SHOW TABLES LIKE 'stage3*'
+INFO  : Completed compiling command(queryId=hive_20260510184912_e6d07e36-6fc0-45ea-b7d9-01c565b83ba6); Time taken: 0.017 seconds
+INFO  : Executing command(queryId=hive_20260510184912_e6d07e36-6fc0-45ea-b7d9-01c565b83ba6): SHOW TABLES LIKE 'stage3*'
 INFO  : Starting task [Stage-0:DDL] in serial mode
-INFO  : Completed executing command(queryId=hive_20260509192919_20c1c0b1-2153-4986-a34f-cac20f025438); Time taken: 0.008 seconds
+INFO  : Completed executing command(queryId=hive_20260510184912_e6d07e36-6fc0-45ea-b7d9-01c565b83ba6); Time taken: 0.009 seconds
 INFO  : OK
 +-------------------------------------+
 |              tab_name               |
@@ -62,11 +62,11 @@ INFO  : OK
 | stage3_prediction_counts            |
 | stage3_sample_prediction            |
 +-------------------------------------+
-11 rows selected (0.075 seconds)
-INFO  : Compiling command(queryId=hive_20260509192919_fda26171-0711-4b35-a514-63f4fe1e1916): SELECT * FROM stage3_evaluation LIMIT 5
+11 rows selected (0.065 seconds)
+INFO  : Compiling command(queryId=hive_20260510184912_0fb8da56-12a9-43d5-b1bb-a1e8d9d1b707): SELECT * FROM stage3_evaluation LIMIT 5
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_evaluation.model, type:string, comment:null), FieldSchema(name:stage3_evaluation.paramcombinations, type:int, comment:null), FieldSchema(name:stage3_evaluation.cvfolds, type:int, comment:null), FieldSchema(name:stage3_evaluation.cvfits, type:int, comment:null), FieldSchema(name:stage3_evaluation.trainingtimeseconds, type:double, comment:null), FieldSchema(name:stage3_evaluation.predictiontimeseconds, type:double, comment:null), FieldSchema(name:stage3_evaluation.evaluationtimeseconds, type:double, comment:null), FieldSchema(name:stage3_evaluation.areaunderroc, type:double, comment:null), FieldSchema(name:stage3_evaluation.areaunderpr, type:double, comment:null), FieldSchema(name:stage3_evaluation.accuracy, type:double, comment:null), FieldSchema(name:stage3_evaluation.weightedprecision, type:double, comment:null), FieldSchema(name:stage3_evaluation.weightedrecall, type:double, comment:null), FieldSchema(name:stage3_evaluation.weightedf1, type:double, comment:null), FieldSchema(name:stage3_evaluation.tn, type:bigint, comment:null), FieldSchema(name:stage3_evaluation.fp, type:bigint, comment:null), FieldSchema(name:stage3_evaluation.fn, type:bigint, comment:null), FieldSchema(name:stage3_evaluation.tp, type:bigint, comment:null), FieldSchema(name:stage3_evaluation.precision_0, type:double, comment:null), FieldSchema(name:stage3_evaluation.recall_0, type:double, comment:null), FieldSchema(name:stage3_evaluation.f1_0, type:double, comment:null), FieldSchema(name:stage3_evaluation.precision_1, type:double, comment:null), FieldSchema(name:stage3_evaluation.recall_1, type:double, comment:null), FieldSchema(name:stage3_evaluation.f1_1, type:double, comment:null), FieldSchema(name:stage3_evaluation.macroprecision, type:double, comment:null), FieldSchema(name:stage3_evaluation.macrorecall, type:double, comment:null), FieldSchema(name:stage3_evaluation.macrof1, type:double, comment:null), FieldSchema(name:stage3_evaluation.model_path, type:string, comment:null), FieldSchema(name:stage3_evaluation.predictions_path, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192919_fda26171-0711-4b35-a514-63f4fe1e1916 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184912_0fb8da56-12a9-43d5-b1bb-a1e8d9d1b707 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -85,9 +85,9 @@ STAGE PLANS:
               ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192919_fda26171-0711-4b35-a514-63f4fe1e1916); Time taken: 0.235 seconds
-INFO  : Executing command(queryId=hive_20260509192919_fda26171-0711-4b35-a514-63f4fe1e1916): SELECT * FROM stage3_evaluation LIMIT 5
-INFO  : Completed executing command(queryId=hive_20260509192919_fda26171-0711-4b35-a514-63f4fe1e1916); Time taken: 0.0 seconds
+INFO  : Completed compiling command(queryId=hive_20260510184912_0fb8da56-12a9-43d5-b1bb-a1e8d9d1b707); Time taken: 0.227 seconds
+INFO  : Executing command(queryId=hive_20260510184912_0fb8da56-12a9-43d5-b1bb-a1e8d9d1b707): SELECT * FROM stage3_evaluation LIMIT 5
+INFO  : Completed executing command(queryId=hive_20260510184912_0fb8da56-12a9-43d5-b1bb-a1e8d9d1b707); Time taken: 0.0 seconds
 INFO  : OK
 +-----------------------------+--------------------------------------+----------------------------+---------------------------+----------------------------------------+------------------------------------------+------------------------------------------+---------------------------------+--------------------------------+-----------------------------+--------------------------------------+-----------------------------------+-------------------------------+-----------------------+-----------------------+-----------------------+-----------------------+--------------------------------+-----------------------------+-------------------------+--------------------------------+-----------------------------+-------------------------+-----------------------------------+--------------------------------+----------------------------+-------------------------------+-------------------------------------+
 |   stage3_evaluation.model   | stage3_evaluation.paramcombinations  | stage3_evaluation.cvfolds  | stage3_evaluation.cvfits  | stage3_evaluation.trainingtimeseconds  | stage3_evaluation.predictiontimeseconds  | stage3_evaluation.evaluationtimeseconds  | stage3_evaluation.areaunderroc  | stage3_evaluation.areaunderpr  | stage3_evaluation.accuracy  | stage3_evaluation.weightedprecision  | stage3_evaluation.weightedrecall  | stage3_evaluation.weightedf1  | stage3_evaluation.tn  | stage3_evaluation.fp  | stage3_evaluation.fn  | stage3_evaluation.tp  | stage3_evaluation.precision_0  | stage3_evaluation.recall_0  | stage3_evaluation.f1_0  | stage3_evaluation.precision_1  | stage3_evaluation.recall_1  | stage3_evaluation.f1_1  | stage3_evaluation.macroprecision  | stage3_evaluation.macrorecall  | stage3_evaluation.macrof1  | stage3_evaluation.model_path  | stage3_evaluation.predictions_path  |
@@ -95,11 +95,11 @@ INFO  : OK
 | model1_logistic_regression  | 6                                    | 3                          | 18                        | 1286.8687467575073                     | 18.296608209609985                       | 28.805508613586426                       | 0.6601911037290888              | 0.32166237299948003            | 0.6048266982698773          | 0.7508492618206672                   | 0.6048266982698773                | 0.6439029209617755            | 994839                | 674788                | 151157                | 269299                | 0.8680998886558068             | 0.5958450600044202          | 0.7066563954052087      | 0.2852480756540446             | 0.6404927031603782          | 0.3947094375186418      | 0.5766739821549257                | 0.6181688815823991             | 0.5506829164619252         | project/models/model1         | project/output/model1_predictions   |
 | model2_random_forest        | 6                                    | 3                          | 18                        | 3968.8623344898224                     | 29.02951693534851                        | 24.816158533096313                       | 0.6622302713114387              | 0.33271043135632483            | 0.605795410439243           | 0.7483290862231617                   | 0.605795410439243                 | 0.6446177681614351            | 1000475               | 668077                | 155606                | 265323                | 0.865402164727212              | 0.5996067248728238          | 0.7083929133448487      | 0.28425433897578745            | 0.6303272048255169          | 0.3918146919987684      | 0.5748282518514998                | 0.6149669648491703             | 0.5501038026718086         | project/models/model2         | project/output/model2_predictions   |
 +-----------------------------+--------------------------------------+----------------------------+---------------------------+----------------------------------------+------------------------------------------+------------------------------------------+---------------------------------+--------------------------------+-----------------------------+--------------------------------------+-----------------------------------+-------------------------------+-----------------------+-----------------------+-----------------------+-----------------------+--------------------------------+-----------------------------+-------------------------+--------------------------------+-----------------------------+-------------------------+-----------------------------------+--------------------------------+----------------------------+-------------------------------+-------------------------------------+
-2 rows selected (0.287 seconds)
-INFO  : Compiling command(queryId=hive_20260509192920_a667b3b8-f2c6-4496-8e17-14bc70696e5f): SELECT * FROM stage3_feature_summary
+2 rows selected (0.29 seconds)
+INFO  : Compiling command(queryId=hive_20260510184913_142bd316-327a-4552-95f2-93eb7669f224): SELECT * FROM stage3_feature_summary
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_feature_summary.feature_group, type:string, comment:null), FieldSchema(name:stage3_feature_summary.feature_count, type:int, comment:null), FieldSchema(name:stage3_feature_summary.description, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192920_a667b3b8-f2c6-4496-8e17-14bc70696e5f : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184913_142bd316-327a-4552-95f2-93eb7669f224 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -116,9 +116,9 @@ STAGE PLANS:
             ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192920_a667b3b8-f2c6-4496-8e17-14bc70696e5f); Time taken: 0.188 seconds
-INFO  : Executing command(queryId=hive_20260509192920_a667b3b8-f2c6-4496-8e17-14bc70696e5f): SELECT * FROM stage3_feature_summary
-INFO  : Completed executing command(queryId=hive_20260509192920_a667b3b8-f2c6-4496-8e17-14bc70696e5f); Time taken: 0.001 seconds
+INFO  : Completed compiling command(queryId=hive_20260510184913_142bd316-327a-4552-95f2-93eb7669f224); Time taken: 0.19 seconds
+INFO  : Executing command(queryId=hive_20260510184913_142bd316-327a-4552-95f2-93eb7669f224): SELECT * FROM stage3_feature_summary
+INFO  : Completed executing command(queryId=hive_20260510184913_142bd316-327a-4552-95f2-93eb7669f224); Time taken: 0.0 seconds
 INFO  : OK
 +----------------------------------------+---------------------------------------+----------------------------------------------------+
 |  stage3_feature_summary.feature_group  | stage3_feature_summary.feature_count  |         stage3_feature_summary.description         |
@@ -132,11 +132,11 @@ INFO  : OK
 | class_balancing                        | 1                                     | "class_weight computed from train set and passed through weightCol" |
 | scaling                                | 1                                     | "StandardScaler applied to assembled feature vectors" |
 +----------------------------------------+---------------------------------------+----------------------------------------------------+
-8 rows selected (0.224 seconds)
-INFO  : Compiling command(queryId=hive_20260509192920_958d5a01-d2f0-44b1-a4fd-aefe0b026221): SELECT * FROM stage3_hyperparameter_summary
+8 rows selected (0.22 seconds)
+INFO  : Compiling command(queryId=hive_20260510184913_76416970-9491-4f72-8dd1-fc1438964306): SELECT * FROM stage3_hyperparameter_summary
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_hyperparameter_summary.model, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_summary.hyperparameter_1, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_summary.values_1, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_summary.hyperparameter_2, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_summary.values_2, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_summary.paramcombinations, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_summary.cvfolds, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_summary.cvfits, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_summary.optimization_metric, type:string, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192920_958d5a01-d2f0-44b1-a4fd-aefe0b026221 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184913_76416970-9491-4f72-8dd1-fc1438964306 : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -153,9 +153,9 @@ STAGE PLANS:
             ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192920_958d5a01-d2f0-44b1-a4fd-aefe0b026221); Time taken: 0.207 seconds
-INFO  : Executing command(queryId=hive_20260509192920_958d5a01-d2f0-44b1-a4fd-aefe0b026221): SELECT * FROM stage3_hyperparameter_summary
-INFO  : Completed executing command(queryId=hive_20260509192920_958d5a01-d2f0-44b1-a4fd-aefe0b026221); Time taken: 0.0 seconds
+INFO  : Completed compiling command(queryId=hive_20260510184913_76416970-9491-4f72-8dd1-fc1438964306); Time taken: 0.209 seconds
+INFO  : Executing command(queryId=hive_20260510184913_76416970-9491-4f72-8dd1-fc1438964306): SELECT * FROM stage3_hyperparameter_summary
+INFO  : Completed executing command(queryId=hive_20260510184913_76416970-9491-4f72-8dd1-fc1438964306); Time taken: 0.0 seconds
 INFO  : OK
 +--------------------------------------+-------------------------------------------------+-----------------------------------------+-------------------------------------------------+-----------------------------------------+--------------------------------------------------+----------------------------------------+---------------------------------------+----------------------------------------------------+
 | stage3_hyperparameter_summary.model  | stage3_hyperparameter_summary.hyperparameter_1  | stage3_hyperparameter_summary.values_1  | stage3_hyperparameter_summary.hyperparameter_2  | stage3_hyperparameter_summary.values_2  | stage3_hyperparameter_summary.paramcombinations  | stage3_hyperparameter_summary.cvfolds  | stage3_hyperparameter_summary.cvfits  | stage3_hyperparameter_summary.optimization_metric  |
@@ -163,21 +163,21 @@ INFO  : OK
 | model1_logistic_regression           | regParam                                        | "0.001;0.01;0.1"                        | elasticNetParam                                 | "0.0;0.5"                               | 6                                                | 3                                      | 18                                    | areaUnderROC                                       |
 | model2_random_forest                 | numTrees                                        | "20;50;100"                             | maxDepth                                        | "5;10"                                  | 6                                                | 3                                      | 18                                    | areaUnderROC                                       |
 +--------------------------------------+-------------------------------------------------+-----------------------------------------+-------------------------------------------------+-----------------------------------------+--------------------------------------------------+----------------------------------------+---------------------------------------+----------------------------------------------------+
-2 rows selected (0.233 seconds)
-INFO  : Compiling command(queryId=hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4): SELECT * FROM stage3_hyperparameter_optimization
+2 rows selected (0.236 seconds)
+INFO  : Compiling command(queryId=hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8): SELECT * FROM stage3_hyperparameter_optimization
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_hyperparameter_optimization.model, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.hyperparameter_1, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.values_1, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.hyperparameter_2, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.values_2, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.paramcombinations, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.cvfolds, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.cvfits, type:int, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.optimization_metric, type:string, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.areaunderroc, type:double, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.areaunderpr, type:double, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.accuracy, type:double, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.weightedf1, type:double, comment:null), FieldSchema(name:stage3_hyperparameter_optimization.macrof1, type:double, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-0 depends on stages: Stage-1 [FETCH]
 
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4:2452
+      DagId: hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8:4661
       Edges:
         Map 2 <- Map 1 (BROADCAST_EDGE)
-      DagName: hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4:2452
+      DagName: hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8:4661
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -233,7 +233,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 288
-                    transient_lastDdlTime 1778344155
+                    transient_lastDdlTime 1778428148
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -258,7 +258,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 288
-                      transient_lastDdlTime 1778344155
+                      transient_lastDdlTime 1778428148
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_hyperparameter_summary
                   name: team22_projectdb.stage3_hyperparameter_summary
@@ -300,10 +300,10 @@ STAGE PLANS:
                           File Output Operator
                             compressed: false
                             GlobalTableId: 0
-                            directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-20_513_9003137015644668610-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-20_513_9003137015644668610-1001/-ext-10002
+                            directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-13_748_3733468973514405411-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-13_748_3733468973514405411-2273/-ext-10002
                             NumFilesPerFileSink: 1
                             Statistics: Num rows: 19 Data size: 13442 Basic stats: COMPLETE Column stats: NONE
-                            Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-20_513_9003137015644668610-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-20_513_9003137015644668610-1001/-ext-10002/
+                            Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-13_748_3733468973514405411-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-13_748_3733468973514405411-2273/-ext-10002/
                             table:
                                 input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                                 output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -348,7 +348,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -373,7 +373,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -387,25 +387,25 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4); Time taken: 0.303 seconds
-INFO  : Executing command(queryId=hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4): SELECT * FROM stage3_hyperparameter_optimization
-INFO  : Query ID = hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4
+INFO  : Completed compiling command(queryId=hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8); Time taken: 0.278 seconds
+INFO  : Executing command(queryId=hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8): SELECT * FROM stage3_hyperparameter_optimization
+INFO  : Query ID = hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4
+INFO  : Subscribed to counters: [] for queryId: hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8
 INFO  : Tez session hasn't been created yet. Opening session
 INFO  : Dag name: SELECT * FROM stage3_...rameter_optimization (Stage-1)
 INFO  : Setting tez.task.scale.memory.reserve-fraction to 0.30000001192092896
-INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_2623)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_4895)
 
 [2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
 [22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container        INITED      1          0        0        1       0       0  
-Map 2            container        INITED      1          0        0        1       0       0  
+[2KMap 1            container       RUNNING      1          0        1        0       0       0  
+Map 2            container       RUNNING      1          0        1        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 2.37 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 3.73 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -413,15 +413,7 @@ Map 2            container        INITED      1          0        0        1    
 [2KMap 1            container       RUNNING      1          0        1        0       0       0  
 Map 2            container       RUNNING      1          0        1        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 2.87 s     
-[22;0m[2K----------------------------------------------------------------------------------------------
-[8A[2K----------------------------------------------------------------------------------------------
-[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
-[22;0m[2K----------------------------------------------------------------------------------------------
-[2KMap 1            container       RUNNING      1          0        1        0       0       0  
-Map 2            container       RUNNING      1          0        1        0       0       0  
-[2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 3.87 s     
+[2K[31;1mVERTICES: 00/02  [>>--------------------------] 0%    ELAPSED TIME: 4.24 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
 [8A[2K----------------------------------------------------------------------------------------------
 [2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
@@ -429,9 +421,9 @@ Map 2            container       RUNNING      1          0        1        0    
 [2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
 Map 2 .......... container     SUCCEEDED      1          1        0        0       0       0  
 [2K----------------------------------------------------------------------------------------------
-[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 4.30 s     
+[2K[31;1mVERTICES: 02/02  [==========================>>] 100%  ELAPSED TIME: 4.69 s     
 [22;0m[2K----------------------------------------------------------------------------------------------
-INFO  : Completed executing command(queryId=hive_20260509192920_e79044b7-fb2f-499f-ab67-2e22430658a4); Time taken: 11.129 seconds
+INFO  : Completed executing command(queryId=hive_20260510184913_c1e2bcc5-38ca-4a55-b989-7c7e84ea7aa8); Time taken: 10.152 seconds
 INFO  : OK
 +-------------------------------------------+----------------------------------------------------+----------------------------------------------+----------------------------------------------------+----------------------------------------------+----------------------------------------------------+---------------------------------------------+--------------------------------------------+----------------------------------------------------+--------------------------------------------------+-------------------------------------------------+----------------------------------------------+------------------------------------------------+---------------------------------------------+
 | stage3_hyperparameter_optimization.model  | stage3_hyperparameter_optimization.hyperparameter_1 | stage3_hyperparameter_optimization.values_1  | stage3_hyperparameter_optimization.hyperparameter_2 | stage3_hyperparameter_optimization.values_2  | stage3_hyperparameter_optimization.paramcombinations | stage3_hyperparameter_optimization.cvfolds  | stage3_hyperparameter_optimization.cvfits  | stage3_hyperparameter_optimization.optimization_metric | stage3_hyperparameter_optimization.areaunderroc  | stage3_hyperparameter_optimization.areaunderpr  | stage3_hyperparameter_optimization.accuracy  | stage3_hyperparameter_optimization.weightedf1  | stage3_hyperparameter_optimization.macrof1  |
@@ -439,18 +431,18 @@ INFO  : OK
 | model2_random_forest                      | numTrees                                           | "20;50;100"                                  | maxDepth                                           | "5;10"                                       | 6                                                  | 3                                           | 18                                         | areaUnderROC                                       | 0.6622302713114387                               | 0.33271043135632483                             | 0.605795410439243                            | 0.6446177681614351                             | 0.5501038026718086                          |
 | model1_logistic_regression                | regParam                                           | "0.001;0.01;0.1"                             | elasticNetParam                                    | "0.0;0.5"                                    | 6                                                  | 3                                           | 18                                         | areaUnderROC                                       | 0.6601911037290888                               | 0.32166237299948003                             | 0.6048266982698773                           | 0.6439029209617755                             | 0.5506829164619252                          |
 +-------------------------------------------+----------------------------------------------------+----------------------------------------------+----------------------------------------------------+----------------------------------------------+----------------------------------------------------+---------------------------------------------+--------------------------------------------+----------------------------------------------------+--------------------------------------------------+-------------------------------------------------+----------------------------------------------+------------------------------------------------+---------------------------------------------+
-2 rows selected (11.461 seconds)
-INFO  : Compiling command(queryId=hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1): SELECT * FROM stage3_model_metrics_long LIMIT 20
+2 rows selected (10.463 seconds)
+INFO  : Compiling command(queryId=hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe): SELECT * FROM stage3_model_metrics_long LIMIT 20
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_model_metrics_long.model, type:string, comment:null), FieldSchema(name:stage3_model_metrics_long.metric_name, type:string, comment:null), FieldSchema(name:stage3_model_metrics_long.metric_value, type:double, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-0 depends on stages: Stage-1 [FETCH]
 
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1:2453
+      DagId: hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe:4669
       Edges:
         Map 1 <- Union 2 (CONTAINS)
         Map 10 <- Union 2 (CONTAINS)
@@ -461,7 +453,7 @@ STAGE PLANS:
         Map 7 <- Union 2 (CONTAINS)
         Map 8 <- Union 2 (CONTAINS)
         Map 9 <- Union 2 (CONTAINS)
-      DagName: hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1:2453
+      DagName: hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe:4669
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -479,10 +471,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_1
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_1
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -527,7 +519,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -552,7 +544,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -574,10 +566,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_9
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_9
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -622,7 +614,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -647,7 +639,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -669,10 +661,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_2
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_2
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -717,7 +709,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -742,7 +734,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -764,10 +756,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_3
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_3
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -812,7 +804,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -837,7 +829,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -859,10 +851,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_4
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_4
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -907,7 +899,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -932,7 +924,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -954,10 +946,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_5
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_5
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1002,7 +994,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1027,7 +1019,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1049,10 +1041,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_6
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_6
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1097,7 +1089,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1122,7 +1114,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1144,10 +1136,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_7
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_7
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1192,7 +1184,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1217,7 +1209,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1239,10 +1231,10 @@ STAGE PLANS:
                       File Output Operator
                         compressed: false
                         GlobalTableId: 0
-                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/HIVE_UNION_SUBDIR_8
+                        directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/HIVE_UNION_SUBDIR_8
                         NumFilesPerFileSink: 1
                         Statistics: Num rows: 20 Data size: 13560 Basic stats: COMPLETE Column stats: NONE
-                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-31_986_3752217118488221026-1001/-ext-10002/
+                        Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-24_212_7313159509883988071-2273/-ext-10002/
                         table:
                             input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                             output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1287,7 +1279,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1312,7 +1304,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1328,18 +1320,48 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1); Time taken: 0.314 seconds
-INFO  : Executing command(queryId=hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1): SELECT * FROM stage3_model_metrics_long LIMIT 20
-INFO  : Query ID = hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1
+INFO  : Completed compiling command(queryId=hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe); Time taken: 0.441 seconds
+INFO  : Executing command(queryId=hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe): SELECT * FROM stage3_model_metrics_long LIMIT 20
+INFO  : Query ID = hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1
+INFO  : Subscribed to counters: [] for queryId: hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe
 INFO  : Session is already open
 INFO  : Dag name: SELECT * FROM stage3_model_metrics_long...20 (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_2623)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_4895)
 
-INFO  : Completed executing command(queryId=hive_20260509192931_075031d4-356c-400f-96d9-3d7079f834e1); Time taken: 0.856 seconds
+[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1            container        INITED      1          0        0        1       0       0  
+Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 4 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 5 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 6            container        INITED      1          0        0        1       0       0  
+Map 7            container       RUNNING      1          0        1        0       0       0  
+Map 8 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 9 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 10           container       RUNNING      1          0        1        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 05/09  [==============>>------------] 55%   ELAPSED TIME: 0.75 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+[15A[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 3 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 4 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 5 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 6 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 7 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 8 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 9 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Map 10 ......... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 09/09  [==========================>>] 100%  ELAPSED TIME: 1.02 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+INFO  : Completed executing command(queryId=hive_20260510184924_c1c1297b-0a60-48dd-b50f-aa2a40139afe); Time taken: 1.747 seconds
 INFO  : OK
 +----------------------------------+----------------------------------------+-----------------------------------------+
 | stage3_model_metrics_long.model  | stage3_model_metrics_long.metric_name  | stage3_model_metrics_long.metric_value  |
@@ -1363,11 +1385,11 @@ INFO  : OK
 | model1_logistic_regression       | macroF1                                | 0.5506829164619252                      |
 | model2_random_forest             | macroF1                                | 0.5501038026718086                      |
 +----------------------------------+----------------------------------------+-----------------------------------------+
-18 rows selected (1.228 seconds)
-INFO  : Compiling command(queryId=hive_20260509192933_522ffea1-2315-4ed8-8b45-76a780f9ef24): SELECT * FROM stage3_model_comparison
+18 rows selected (2.29 seconds)
+INFO  : Compiling command(queryId=hive_20260510184926_1cd48577-4680-4757-b6f8-1e8ac05986ad): SELECT * FROM stage3_model_comparison
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_model_comparison.model, type:string, comment:null), FieldSchema(name:stage3_model_comparison.paramcombinations, type:int, comment:null), FieldSchema(name:stage3_model_comparison.cvfolds, type:int, comment:null), FieldSchema(name:stage3_model_comparison.cvfits, type:int, comment:null), FieldSchema(name:stage3_model_comparison.trainingtimeseconds, type:double, comment:null), FieldSchema(name:stage3_model_comparison.trainingtimeminutes, type:double, comment:null), FieldSchema(name:stage3_model_comparison.predictiontimeseconds, type:double, comment:null), FieldSchema(name:stage3_model_comparison.evaluationtimeseconds, type:double, comment:null), FieldSchema(name:stage3_model_comparison.areaunderroc, type:double, comment:null), FieldSchema(name:stage3_model_comparison.areaunderpr, type:double, comment:null), FieldSchema(name:stage3_model_comparison.accuracy, type:double, comment:null), FieldSchema(name:stage3_model_comparison.weightedprecision, type:double, comment:null), FieldSchema(name:stage3_model_comparison.weightedrecall, type:double, comment:null), FieldSchema(name:stage3_model_comparison.weightedf1, type:double, comment:null), FieldSchema(name:stage3_model_comparison.macroprecision, type:double, comment:null), FieldSchema(name:stage3_model_comparison.macrorecall, type:double, comment:null), FieldSchema(name:stage3_model_comparison.macrof1, type:double, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192933_522ffea1-2315-4ed8-8b45-76a780f9ef24 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184926_1cd48577-4680-4757-b6f8-1e8ac05986ad : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -1386,9 +1408,9 @@ STAGE PLANS:
             ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192933_522ffea1-2315-4ed8-8b45-76a780f9ef24); Time taken: 0.197 seconds
-INFO  : Executing command(queryId=hive_20260509192933_522ffea1-2315-4ed8-8b45-76a780f9ef24): SELECT * FROM stage3_model_comparison
-INFO  : Completed executing command(queryId=hive_20260509192933_522ffea1-2315-4ed8-8b45-76a780f9ef24); Time taken: 0.0 seconds
+INFO  : Completed compiling command(queryId=hive_20260510184926_1cd48577-4680-4757-b6f8-1e8ac05986ad); Time taken: 0.356 seconds
+INFO  : Executing command(queryId=hive_20260510184926_1cd48577-4680-4757-b6f8-1e8ac05986ad): SELECT * FROM stage3_model_comparison
+INFO  : Completed executing command(queryId=hive_20260510184926_1cd48577-4680-4757-b6f8-1e8ac05986ad); Time taken: 0.001 seconds
 INFO  : OK
 +--------------------------------+--------------------------------------------+----------------------------------+---------------------------------+----------------------------------------------+----------------------------------------------+------------------------------------------------+------------------------------------------------+---------------------------------------+--------------------------------------+-----------------------------------+--------------------------------------------+-----------------------------------------+-------------------------------------+-----------------------------------------+--------------------------------------+----------------------------------+
 | stage3_model_comparison.model  | stage3_model_comparison.paramcombinations  | stage3_model_comparison.cvfolds  | stage3_model_comparison.cvfits  | stage3_model_comparison.trainingtimeseconds  | stage3_model_comparison.trainingtimeminutes  | stage3_model_comparison.predictiontimeseconds  | stage3_model_comparison.evaluationtimeseconds  | stage3_model_comparison.areaunderroc  | stage3_model_comparison.areaunderpr  | stage3_model_comparison.accuracy  | stage3_model_comparison.weightedprecision  | stage3_model_comparison.weightedrecall  | stage3_model_comparison.weightedf1  | stage3_model_comparison.macroprecision  | stage3_model_comparison.macrorecall  | stage3_model_comparison.macrof1  |
@@ -1396,22 +1418,22 @@ INFO  : OK
 | model1_logistic_regression     | 6                                          | 3                                | 18                              | 1286.8687467575073                           | 21.447812445958455                           | 18.296608209609985                             | 28.805508613586426                             | 0.6601911037290888                    | 0.32166237299948003                  | 0.6048266982698773                | 0.7508492618206672                         | 0.6048266982698773                      | 0.6439029209617755                  | 0.5766739821549257                      | 0.6181688815823991                   | 0.5506829164619252               |
 | model2_random_forest           | 6                                          | 3                                | 18                              | 3968.8623344898224                           | 66.14770557483037                            | 29.02951693534851                              | 24.816158533096313                             | 0.6622302713114387                    | 0.33271043135632483                  | 0.605795410439243                 | 0.7483290862231617                         | 0.605795410439243                       | 0.6446177681614351                  | 0.5748282518514998                      | 0.6149669648491703                   | 0.5501038026718086               |
 +--------------------------------+--------------------------------------------+----------------------------------+---------------------------------+----------------------------------------------+----------------------------------------------+------------------------------------------------+------------------------------------------------+---------------------------------------+--------------------------------------+-----------------------------------+--------------------------------------------+-----------------------------------------+-------------------------------------+-----------------------------------------+--------------------------------------+----------------------------------+
-2 rows selected (0.227 seconds)
-INFO  : Compiling command(queryId=hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534): SELECT * FROM stage3_prediction_counts
+2 rows selected (0.406 seconds)
+INFO  : Compiling command(queryId=hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd): SELECT * FROM stage3_prediction_counts
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_prediction_counts.model, type:string, comment:null), FieldSchema(name:stage3_prediction_counts.prediction, type:double, comment:null), FieldSchema(name:stage3_prediction_counts.prediction_count, type:bigint, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534 : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-0 depends on stages: Stage-1 [FETCH]
 
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534:2454
+      DagId: hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd:4670
       Edges:
         Reducer 2 <- Map 1 (SIMPLE_EDGE), Union 3 (CONTAINS)
         Reducer 5 <- Map 4 (SIMPLE_EDGE), Union 3 (CONTAINS)
-      DagName: hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534:2454
+      DagName: hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd:4670
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -1469,7 +1491,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 16720681
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428148
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1494,7 +1516,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 16720681
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428148
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_model1_predictions
                   name: team22_projectdb.stage3_model1_predictions
@@ -1556,7 +1578,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 16715865
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428148
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1581,7 +1603,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 16715865
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428148
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_model2_predictions
                   name: team22_projectdb.stage3_model2_predictions
@@ -1604,10 +1626,10 @@ STAGE PLANS:
                   File Output Operator
                     compressed: false
                     GlobalTableId: 0
-                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-ext-10002/HIVE_UNION_SUBDIR_1
+                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-26_932_432042056861422839-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-26_932_432042056861422839-2273/-ext-10002/HIVE_UNION_SUBDIR_1
                     NumFilesPerFileSink: 1
                     Statistics: Num rows: 835913 Data size: 167182635 Basic stats: COMPLETE Column stats: NONE
-                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-ext-10002/
+                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-26_932_432042056861422839-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-26_932_432042056861422839-2273/-ext-10002/
                     table:
                         input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                         output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1640,10 +1662,10 @@ STAGE PLANS:
                   File Output Operator
                     compressed: false
                     GlobalTableId: 0
-                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-ext-10002/HIVE_UNION_SUBDIR_2
+                    directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-26_932_432042056861422839-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-26_932_432042056861422839-2273/-ext-10002/HIVE_UNION_SUBDIR_2
                     NumFilesPerFileSink: 1
                     Statistics: Num rows: 835913 Data size: 167182635 Basic stats: COMPLETE Column stats: NONE
-                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-33_457_2828030542599604051-1001/-ext-10002/
+                    Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-26_932_432042056861422839-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-26_932_432042056861422839-2273/-ext-10002/
                     table:
                         input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                         output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1669,18 +1691,28 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534); Time taken: 0.22 seconds
-INFO  : Executing command(queryId=hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534): SELECT * FROM stage3_prediction_counts
-INFO  : Query ID = hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534
+INFO  : Completed compiling command(queryId=hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd); Time taken: 0.393 seconds
+INFO  : Executing command(queryId=hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd): SELECT * FROM stage3_prediction_counts
+INFO  : Query ID = hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534
+INFO  : Subscribed to counters: [] for queryId: hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd
 INFO  : Session is already open
 INFO  : Dag name: SELECT * FROM stage3_prediction_counts (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_2623)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_4895)
 
-INFO  : Completed executing command(queryId=hive_20260509192933_3d995396-1f9e-4107-94fc-267e99537534); Time taken: 0.935 seconds
+[2K----------------------------------------------------------------------------------------------
+[2K[36;1m        VERTICES      MODE        STATUS  TOTAL  COMPLETED  RUNNING  PENDING  FAILED  KILLED  
+[22;0m[2K----------------------------------------------------------------------------------------------
+[2KMap 1 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 2 ...... container     SUCCEEDED      1          1        0        0       0       0  
+Map 4 .......... container     SUCCEEDED      1          1        0        0       0       0  
+Reducer 5 ...... container     SUCCEEDED      1          1        0        0       0       0  
+[2K----------------------------------------------------------------------------------------------
+[2K[31;1mVERTICES: 04/04  [==========================>>] 100%  ELAPSED TIME: 0.87 s     
+[22;0m[2K----------------------------------------------------------------------------------------------
+INFO  : Completed executing command(queryId=hive_20260510184926_2b4dfe86-c380-45c0-bb42-cb0036f6e7dd); Time taken: 1.045 seconds
 INFO  : OK
 +---------------------------------+--------------------------------------+--------------------------------------------+
 | stage3_prediction_counts.model  | stage3_prediction_counts.prediction  | stage3_prediction_counts.prediction_count  |
@@ -1690,24 +1722,24 @@ INFO  : OK
 | model2_random_forest            | 0.0                                  | 1156081                                    |
 | model2_random_forest            | 1.0                                  | 933400                                     |
 +---------------------------------+--------------------------------------+--------------------------------------------+
-4 rows selected (1.183 seconds)
-INFO  : Compiling command(queryId=hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb): SELECT * FROM stage3_confusion_matrix_long
+4 rows selected (1.488 seconds)
+INFO  : Compiling command(queryId=hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957): SELECT * FROM stage3_confusion_matrix_long
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_confusion_matrix_long.model, type:string, comment:null), FieldSchema(name:stage3_confusion_matrix_long.actual_label, type:string, comment:null), FieldSchema(name:stage3_confusion_matrix_long.predicted_label, type:string, comment:null), FieldSchema(name:stage3_confusion_matrix_long.count_value, type:bigint, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957 : STAGE DEPENDENCIES:
   Stage-1 is a root stage [MAPRED]
   Stage-0 depends on stages: Stage-1 [FETCH]
 
 STAGE PLANS:
   Stage: Stage-1
     Tez
-      DagId: hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb:2455
+      DagId: hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957:4671
       Edges:
         Map 1 <- Union 2 (CONTAINS)
         Map 3 <- Union 2 (CONTAINS)
         Map 4 <- Union 2 (CONTAINS)
         Map 5 <- Union 2 (CONTAINS)
-      DagName: hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb:2455
+      DagName: hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957:4671
       Vertices:
         Map 1 
             Map Operator Tree:
@@ -1722,10 +1754,10 @@ STAGE PLANS:
                     File Output Operator
                       compressed: false
                       GlobalTableId: 0
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/HIVE_UNION_SUBDIR_1
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/HIVE_UNION_SUBDIR_1
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 72 Data size: 48880 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/
                       table:
                           input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                           output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1770,7 +1802,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1795,7 +1827,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1814,10 +1846,10 @@ STAGE PLANS:
                     File Output Operator
                       compressed: false
                       GlobalTableId: 0
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/HIVE_UNION_SUBDIR_2
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/HIVE_UNION_SUBDIR_2
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 72 Data size: 48880 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/
                       table:
                           input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                           output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1862,7 +1894,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1887,7 +1919,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1906,10 +1938,10 @@ STAGE PLANS:
                     File Output Operator
                       compressed: false
                       GlobalTableId: 0
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/HIVE_UNION_SUBDIR_3
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/HIVE_UNION_SUBDIR_3
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 72 Data size: 48880 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/
                       table:
                           input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                           output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -1954,7 +1986,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -1979,7 +2011,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -1998,10 +2030,10 @@ STAGE PLANS:
                     File Output Operator
                       compressed: false
                       GlobalTableId: 0
-                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/HIVE_UNION_SUBDIR_4
+                      directory: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/HIVE_UNION_SUBDIR_4
                       NumFilesPerFileSink: 1
                       Statistics: Num rows: 72 Data size: 48880 Basic stats: COMPLETE Column stats: NONE
-                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/d56bc1f2-41b5-4075-a417-e1ab19dd3d86/hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-mr-10001/.hive-staging_hive_2026-05-09_19-29-34_645_8572072101085761639-1001/-ext-10002/
+                      Stats Publishing Key Prefix: hdfs://hadoop-02.uni.innopolis.ru:8020/tmp/hive/team22/761ffa61-d3a0-496b-bdf8-f173ee1a6cd4/hive_2026-05-10_18-49-28_430_791811728168817010-2273/-mr-10001/.hive-staging_hive_2026-05-10_18-49-28_430_791811728168817010-2273/-ext-10002/
                       table:
                           input format: org.apache.hadoop.mapred.SequenceFileInputFormat
                           output format: org.apache.hadoop.hive.ql.io.HiveSequenceFileOutputFormat
@@ -2046,7 +2078,7 @@ STAGE PLANS:
                     serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     skip.header.line.count 1
                     totalSize 1222
-                    transient_lastDdlTime 1778344154
+                    transient_lastDdlTime 1778428147
                   serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                 
                     input format: org.apache.hadoop.mapred.TextInputFormat
@@ -2071,7 +2103,7 @@ STAGE PLANS:
                       serialization.lib org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                       skip.header.line.count 1
                       totalSize 1222
-                      transient_lastDdlTime 1778344154
+                      transient_lastDdlTime 1778428147
                     serde: org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
                     name: team22_projectdb.stage3_evaluation
                   name: team22_projectdb.stage3_evaluation
@@ -2087,18 +2119,18 @@ STAGE PLANS:
         ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb); Time taken: 0.237 seconds
-INFO  : Executing command(queryId=hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb): SELECT * FROM stage3_confusion_matrix_long
-INFO  : Query ID = hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb
+INFO  : Completed compiling command(queryId=hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957); Time taken: 0.39 seconds
+INFO  : Executing command(queryId=hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957): SELECT * FROM stage3_confusion_matrix_long
+INFO  : Query ID = hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957
 INFO  : Total jobs = 1
 INFO  : Launching Job 1 out of 1
 INFO  : Starting task [Stage-1:MAPRED] in serial mode
-INFO  : Subscribed to counters: [] for queryId: hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb
+INFO  : Subscribed to counters: [] for queryId: hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957
 INFO  : Session is already open
 INFO  : Dag name: SELECT * FROM stage3_confusion_matrix_long (Stage-1)
-INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_2623)
+INFO  : Status: Running (Executing on YARN cluster with App id application_1777989965680_4895)
 
-INFO  : Completed executing command(queryId=hive_20260509192934_e916fe7d-668a-4b27-93b2-6e3d397df9cb); Time taken: 0.373 seconds
+INFO  : Completed executing command(queryId=hive_20260510184928_4113d821-a7a9-4294-9f89-95c6e6946957); Time taken: 0.45 seconds
 INFO  : OK
 +-------------------------------------+--------------------------------------------+-----------------------------------------------+-------------------------------------------+
 | stage3_confusion_matrix_long.model  | stage3_confusion_matrix_long.actual_label  | stage3_confusion_matrix_long.predicted_label  | stage3_confusion_matrix_long.count_value  |
@@ -2112,11 +2144,11 @@ INFO  : OK
 | model1_logistic_regression          | 1_actual                                   | 1_predicted                                   | 269299                                    |
 | model2_random_forest                | 1_actual                                   | 1_predicted                                   | 265323                                    |
 +-------------------------------------+--------------------------------------------+-----------------------------------------------+-------------------------------------------+
-8 rows selected (0.649 seconds)
-INFO  : Compiling command(queryId=hive_20260509192935_dc14777b-1846-473b-a977-c5e1c825f36d): SELECT * FROM stage3_sample_prediction LIMIT 5
+8 rows selected (0.876 seconds)
+INFO  : Compiling command(queryId=hive_20260510184929_836d1f89-6efe-49ff-8425-69a151d0c9cc): SELECT * FROM stage3_sample_prediction LIMIT 5
 INFO  : Semantic Analysis Completed (retrial = false)
 INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:stage3_sample_prediction.actual_label, type:double, comment:null), FieldSchema(name:stage3_sample_prediction.prediction, type:double, comment:null), FieldSchema(name:stage3_sample_prediction.probability_class_0, type:double, comment:null), FieldSchema(name:stage3_sample_prediction.probability_class_1, type:double, comment:null)], properties:null)
-INFO  : EXPLAIN output for queryid hive_20260509192935_dc14777b-1846-473b-a977-c5e1c825f36d : STAGE DEPENDENCIES:
+INFO  : EXPLAIN output for queryid hive_20260510184929_836d1f89-6efe-49ff-8425-69a151d0c9cc : STAGE DEPENDENCIES:
   Stage-0 is a root stage [FETCH]
 
 STAGE PLANS:
@@ -2135,15 +2167,15 @@ STAGE PLANS:
               ListSink
 
 
-INFO  : Completed compiling command(queryId=hive_20260509192935_dc14777b-1846-473b-a977-c5e1c825f36d); Time taken: 0.179 seconds
-INFO  : Executing command(queryId=hive_20260509192935_dc14777b-1846-473b-a977-c5e1c825f36d): SELECT * FROM stage3_sample_prediction LIMIT 5
-INFO  : Completed executing command(queryId=hive_20260509192935_dc14777b-1846-473b-a977-c5e1c825f36d); Time taken: 0.001 seconds
+INFO  : Completed compiling command(queryId=hive_20260510184929_836d1f89-6efe-49ff-8425-69a151d0c9cc); Time taken: 0.22 seconds
+INFO  : Executing command(queryId=hive_20260510184929_836d1f89-6efe-49ff-8425-69a151d0c9cc): SELECT * FROM stage3_sample_prediction LIMIT 5
+INFO  : Completed executing command(queryId=hive_20260510184929_836d1f89-6efe-49ff-8425-69a151d0c9cc); Time taken: 0.0 seconds
 INFO  : OK
 +----------------------------------------+--------------------------------------+-----------------------------------------------+-----------------------------------------------+
 | stage3_sample_prediction.actual_label  | stage3_sample_prediction.prediction  | stage3_sample_prediction.probability_class_0  | stage3_sample_prediction.probability_class_1  |
 +----------------------------------------+--------------------------------------+-----------------------------------------------+-----------------------------------------------+
 | 0.0                                    | 0.0                                  | 0.593121124138289                             | 0.40687887586171095                           |
 +----------------------------------------+--------------------------------------+-----------------------------------------------+-----------------------------------------------+
-1 row selected (0.21 seconds)
+1 row selected (0.26 seconds)
 Beeline version 2.3.9 by Apache Hive
 Closing: 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10001

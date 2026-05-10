@@ -6,67 +6,68 @@
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS flights_2024_features;
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CREATE EXTERNAL TABLE flights_2024_features (
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     flight_id BIGINT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     year INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     day_of_month INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     day_of_week INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     fl_date DATE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     op_unique_carrier STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     op_carrier_fl_num DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     origin STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     origin_city_name STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     origin_state_nm STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dest STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dest_city_name STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dest_state_nm STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     crs_dep_time INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dep_time DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dep_delay DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     taxi_out DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     wheels_off DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     wheels_on DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     taxi_in DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     crs_arr_time INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     arr_time DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     arr_delay DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     cancelled INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     cancellation_code STRING,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     diverted INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     crs_elapsed_time DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     actual_elapsed_time DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     air_time DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     distance DOUBLE,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     carrier_delay INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     weather_delay INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     nas_delay INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     security_delay INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     late_aircraft_delay INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     scheduled_dep_hour INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     scheduled_arr_hour INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     is_weekend INT,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     is_arrival_delayed INT
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> )
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> PARTITIONED BY (month INT)
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> CLUSTERED BY (op_unique_carrier) INTO 16 BUCKETS
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> STORED AS PARQUET
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> LOCATION 'project/hive/warehouse/flights_2024_features'
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> TBLPROPERTIES ('parquet.compression'='SNAPPY');
+. . . . . . . . . . . . . . . . . . . . . . .>     flight_id BIGINT,
+. . . . . . . . . . . . . . . . . . . . . . .>     year INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     day_of_month INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     day_of_week INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     fl_date DATE,
+. . . . . . . . . . . . . . . . . . . . . . .>     op_unique_carrier STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     op_carrier_fl_num DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     origin STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     origin_city_name STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     origin_state_nm STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     dest STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     dest_city_name STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     dest_state_nm STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     crs_dep_time INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     dep_time DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     dep_delay DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     taxi_out DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     wheels_off DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     wheels_on DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     taxi_in DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     crs_arr_time INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     arr_time DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     arr_delay DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     cancelled INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     cancellation_code STRING,
+. . . . . . . . . . . . . . . . . . . . . . .>     diverted INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     crs_elapsed_time DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     actual_elapsed_time DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     air_time DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     distance DOUBLE,
+. . . . . . . . . . . . . . . . . . . . . . .>     carrier_delay INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     weather_delay INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     nas_delay INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     security_delay INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     late_aircraft_delay INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     scheduled_dep_hour INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     scheduled_arr_hour INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     is_weekend INT,
+. . . . . . . . . . . . . . . . . . . . . . .>     is_arrival_delayed INT
+. . . . . . . . . . . . . . . . . . . . . . .> )
+. . . . . . . . . . . . . . . . . . . . . . .> PARTITIONED BY (month INT)
+. . . . . . . . . . . . . . . . . . . . . . .> CLUSTERED BY (op_unique_carrier) INTO 16 BUCKETS
+. . . . . . . . . . . . . . . . . . . . . . .> STORED AS PARQUET
+. . . . . . . . . . . . . . . . . . . . . . .> LOCATION 'project/hive/warehouse/flights_2024_features'
+. . . . . . . . . . . . . . . . . . . . . . .> TBLPROPERTIES ('parquet.compression'='SNAPPY');
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> INSERT INTO flights_2024_features PARTITION (month)
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> SELECT
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     flight_id, year, day_of_month, day_of_week, fl_date,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     op_unique_carrier, op_carrier_fl_num, origin, origin_city_name, origin_state_nm,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     dest, dest_city_name, dest_state_nm, crs_dep_time, dep_time, dep_delay,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     taxi_out, wheels_off, wheels_on, taxi_in, crs_arr_time, arr_time, arr_delay,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     cancelled, cancellation_code, diverted, crs_elapsed_time, actual_elapsed_time,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     air_time, distance, carrier_delay, weather_delay, nas_delay, security_delay,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     late_aircraft_delay,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     FLOOR(crs_dep_time / 100),
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     FLOOR(crs_arr_time / 100),
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     CASE WHEN day_of_week IN (6,7) THEN 1 ELSE 0 END,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     CASE WHEN arr_delay > 15 THEN 1 ELSE 0 END,
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10>     month
-0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> FROM flights_2024_part_buck;
+. . . . . . . . . . . . . . . . . . . . . . .> SELECT
+. . . . . . . . . . . . . . . . . . . . . . .>     flight_id, year, day_of_month, day_of_week, fl_date,
+. . . . . . . . . . . . . . . . . . . . . . .>     op_unique_carrier, op_carrier_fl_num, origin, origin_city_name, origin_state_nm,
+. . . . . . . . . . . . . . . . . . . . . . .>     dest, dest_city_name, dest_state_nm, crs_dep_time, dep_time, dep_delay,
+. . . . . . . . . . . . . . . . . . . . . . .>     taxi_out, wheels_off, wheels_on, taxi_in, crs_arr_time, arr_time, arr_delay,
+. . . . . . . . . . . . . . . . . . . . . . .>     cancelled, cancellation_code, diverted, crs_elapsed_time, actual_elapsed_time,
+. . . . . . . . . . . . . . . . . . . . . . .>     air_time, distance, carrier_delay, weather_delay, nas_delay, security_delay,
+. . . . . . . . . . . . . . . . . . . . . . .>     late_aircraft_delay,
+. . . . . . . . . . . . . . . . . . . . . . .>     FLOOR(crs_dep_time / 100),
+. . . . . . . . . . . . . . . . . . . . . . .>     FLOOR(crs_arr_time / 100),
+. . . . . . . . . . . . . . . . . . . . . . .>     CASE WHEN day_of_week IN (6,7) THEN 1 ELSE 0 END,
+. . . . . . . . . . . . . . . . . . . . . . .>     CASE WHEN arr_delay > 15 THEN 1 ELSE 0 END,
+. . . . . . . . . . . . . . . . . . . . . . .>     month
+. . . . . . . . . . . . . . . . . . . . . . .> FROM flights_2024_part_buck;
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> DROP TABLE IF EXISTS flights_2024_part_buck;
+0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
 0: jdbc:hive2://hadoop-03.uni.innopolis.ru:10> 
